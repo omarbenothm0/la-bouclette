@@ -42,11 +42,11 @@
     border-bottom: 1px solid var(--cream-dark);
   }
 
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: var(--brown);
-    letter-spacing: 0.05em;
+  .nav-logo img {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .nav-links {
@@ -97,8 +97,19 @@
     animation: float 8s ease-in-out infinite;
   }
 
-  .blob1 { width: 500px; height: 500px; background: var(--pink); top: -100px; right: -100px; animation-delay: 0s; }
-  .blob2 { width: 300px; height: 300px; background: var(--brown-light); bottom: -50px; left: -50px; animation-delay: 3s; }
+  .blob1 {
+    width: 500px; height: 500px;
+    background: var(--pink);
+    top: -100px; right: -100px;
+    animation-delay: 0s;
+  }
+
+  .blob2 {
+    width: 300px; height: 300px;
+    background: var(--brown-light);
+    bottom: -50px; left: -50px;
+    animation-delay: 3s;
+  }
 
   @keyframes float {
     0%, 100% { transform: translateY(0) scale(1); }
@@ -129,7 +140,10 @@
     animation: fadeUp 0.8s ease 0.2s both;
   }
 
-  .hero-title em { font-style: italic; color: var(--brown); }
+  .hero-title em {
+    font-style: italic;
+    color: var(--brown);
+  }
 
   .hero-sub {
     font-size: 1.1rem;
@@ -175,7 +189,11 @@
     gap: 0.5rem;
   }
 
-  .btn-primary:hover { background: var(--dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(107,74,62,0.3); }
+  .btn-primary:hover {
+    background: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107,74,62,0.3);
+  }
 
   .btn-secondary {
     background: transparent;
@@ -189,13 +207,17 @@
     transition: all 0.3s;
   }
 
-  .btn-secondary:hover { background: var(--cream-dark); transform: translateY(-2px); }
+  .btn-secondary:hover {
+    background: var(--cream-dark);
+    transform: translateY(-2px);
+  }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* SECTION STYLES */
   section { padding: 6rem 2rem; }
 
   .section-label {
@@ -231,9 +253,17 @@
   /* ABOUT */
   .about { background: var(--white); }
 
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
 
-  .about-visual { position: relative; height: 500px; }
+  .about-visual {
+    position: relative;
+    height: 500px;
+  }
 
   .about-card {
     position: absolute;
@@ -264,12 +294,33 @@
     border-radius: 20px;
   }
 
-  .badge-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--white); font-weight: 700; }
-  .badge-txt { font-size: 0.75rem; color: var(--pink-light); letter-spacing: 0.1em; text-align: center; padding: 0 1rem; }
+  .badge-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: 700;
+  }
 
-  .about-features { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+  .badge-txt {
+    font-size: 0.75rem;
+    color: var(--pink-light);
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 0 1rem;
+  }
 
-  .feature { display: flex; align-items: flex-start; gap: 1rem; }
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
   .feature-icon {
     width: 44px; height: 44px;
@@ -282,69 +333,39 @@
     flex-shrink: 0;
   }
 
-  .feature-text h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--dark); margin-bottom: 0.2rem; }
-  .feature-text p { font-size: 0.875rem; color: var(--brown-light); line-height: 1.6; }
-
-  /* GALLERY */
-  .gallery { background: var(--cream); }
-
-  .gallery-header { text-align: center; margin-bottom: 3rem; }
-  .gallery-header .section-sub { margin: 0 auto; }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  .feature-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--dark);
+    margin-bottom: 0.2rem;
   }
 
-  .gallery-item {
-    border-radius: 16px;
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    background: linear-gradient(135deg, var(--cream-dark), var(--pink-light));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5rem;
-    position: relative;
-    transition: transform 0.3s;
-    cursor: default;
-  }
-
-  .gallery-item:hover { transform: scale(1.02); }
-
-  .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; min-height: 400px; }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .gallery-placeholder {
-    font-size: 3rem;
-    opacity: 0.4;
-  }
-
-  .gallery-placeholder-text {
-    font-size: 0.8rem;
+  .feature-text p {
+    font-size: 0.875rem;
     color: var(--brown-light);
-    text-align: center;
-    padding: 0 1rem;
-    opacity: 0.7;
+    line-height: 1.6;
   }
 
   /* SERVICES */
-  .services { background: var(--white); }
+  .services { background: var(--cream); }
 
-  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem; }
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
 
   .service-card {
-    background: var(--cream);
+    background: var(--white);
     border-radius: 20px;
     padding: 2rem 1.5rem;
     transition: all 0.3s;
@@ -364,99 +385,27 @@
     transition: transform 0.3s;
   }
 
-  .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(107,74,62,0.15); }
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(107,74,62,0.15);
+  }
+
   .service-card:hover::before { transform: scaleX(1); }
 
   .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-  .service-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark); margin-bottom: 0.5rem; }
-  .service-desc { font-size: 0.825rem; color: var(--brown-light); line-height: 1.6; }
 
-  /* PRICING */
-  .pricing { background: var(--cream); }
-
-  .pricing-header { text-align: center; margin-bottom: 3.5rem; }
-  .pricing-header .section-sub { margin: 0 auto; }
-
-  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-
-  .pricing-card {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 2.5rem 2rem;
-    transition: all 0.3s;
-    border: 2px solid transparent;
-  }
-
-  .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(107,74,62,0.12); }
-
-  .pricing-card.featured {
-    background: var(--brown);
-    color: var(--white);
-    border-color: var(--brown);
-  }
-
-  .pricing-badge {
-    display: inline-block;
-    background: var(--pink-light);
-    color: var(--brown);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px;
-    margin-bottom: 1.2rem;
-    font-weight: 500;
-  }
-
-  .pricing-card.featured .pricing-badge { background: rgba(255,255,255,0.2); color: var(--white); }
-
-  .pricing-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 0.3rem; }
-  .pricing-card.featured .pricing-name { color: var(--white); }
-
-  .pricing-price {
+  .service-name {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--brown);
-    margin: 1rem 0 0.2rem;
-  }
-
-  .pricing-card.featured .pricing-price { color: var(--pink-light); }
-
-  .pricing-unit { font-size: 0.8rem; color: var(--brown-light); margin-bottom: 1.5rem; }
-  .pricing-card.featured .pricing-unit { color: rgba(255,250,246,0.6); }
-
-  .pricing-divider { border: none; border-top: 1px solid var(--cream-dark); margin: 1.5rem 0; }
-  .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,0.15); }
-
-  .pricing-items { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-
-  .pricing-items li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     color: var(--dark);
+    margin-bottom: 0.5rem;
   }
 
-  .pricing-card.featured .pricing-items li { color: rgba(255,250,246,0.9); }
-
-  .pricing-items li span:last-child {
-    font-weight: 500;
-    color: var(--brown);
-  }
-
-  .pricing-card.featured .pricing-items li span:last-child { color: var(--pink-light); }
-
-  .pricing-note {
-    font-size: 0.75rem;
+  .service-desc {
+    font-size: 0.825rem;
     color: var(--brown-light);
-    margin-top: 1.5rem;
-    font-style: italic;
-    text-align: center;
+    line-height: 1.6;
   }
-
-  .pricing-card.featured .pricing-note { color: rgba(255,250,246,0.5); }
 
   /* REVIEWS */
   .reviews { background: var(--white); }
@@ -464,7 +413,11 @@
   .reviews-header { text-align: center; margin-bottom: 3.5rem; }
   .reviews-header .section-sub { margin: 0 auto; }
 
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
 
   .review-card {
     background: var(--cream);
@@ -476,10 +429,28 @@
 
   .review-card:hover { transform: translateY(-3px); }
 
-  .review-quote { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--pink); line-height: 0.8; margin-bottom: 1rem; opacity: 0.5; }
-  .review-text { font-size: 0.9rem; color: var(--dark); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+  .review-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--pink);
+    line-height: 0.8;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
 
-  .review-footer { display: flex; align-items: center; gap: 0.8rem; }
+  .review-text {
+    font-size: 0.9rem;
+    color: var(--dark);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .review-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
 
   .reviewer-avatar {
     width: 38px; height: 38px;
@@ -494,161 +465,13 @@
     flex-shrink: 0;
   }
 
-  .reviewer-name { font-weight: 500; font-size: 0.875rem; color: var(--dark); }
-  .reviewer-stars { color: #D4A04A; font-size: 0.75rem; }
-
-  /* FAQ */
-  .faq { background: var(--cream); }
-
-  .faq-header { text-align: center; margin-bottom: 3.5rem; }
-
-  .faq-list { max-width: 750px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-
-  .faq-item {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
-
-  .faq-question {
-    padding: 1.4rem 1.8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    gap: 1rem;
-  }
-
-  .faq-question h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
+  .reviewer-name {
+    font-weight: 500;
+    font-size: 0.875rem;
     color: var(--dark);
-    font-weight: 400;
   }
 
-  .faq-icon {
-    width: 28px; height: 28px;
-    background: var(--cream);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    color: var(--brown);
-    flex-shrink: 0;
-    transition: transform 0.3s;
-    font-style: normal;
-  }
-
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 1.8rem;
-  }
-
-  .faq-item.open .faq-answer { max-height: 200px; padding: 0 1.8rem 1.4rem; }
-
-  .faq-answer p { font-size: 0.9rem; color: var(--brown-light); line-height: 1.8; }
-
-  /* SOCIAL */
-  .social-section { background: var(--white); padding: 4rem 2rem; }
-
-  .social-header { text-align: center; margin-bottom: 2.5rem; }
-
-  .social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-instagram {
-    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    transition: all 0.3s;
-  }
-
-  .btn-instagram:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(220,39,67,0.35); }
-
-  .btn-facebook {
-    background: #1877F2;
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    transition: all 0.3s;
-  }
-
-  .btn-facebook:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(24,119,242,0.35); }
-
-  .social-icon {
-    width: 20px;
-    height: 20px;
-    fill: white;
-    flex-shrink: 0;
-  }
-
-  /* MAP */
-  .map-section { background: var(--cream); padding: 5rem 2rem; }
-
-  .map-header { text-align: center; margin-bottom: 3rem; }
-
-  .map-card {
-    max-width: 700px;
-    margin: 0 auto;
-    background: var(--white);
-    border-radius: 24px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(107,74,62,0.1);
-  }
-
-  .map-address {
-    font-size: 1rem;
-    color: var(--brown-light);
-    line-height: 1.8;
-    margin-bottom: 0.5rem;
-  }
-
-  .map-hint {
-    font-size: 0.8rem;
-    color: var(--pink);
-    margin-bottom: 2rem;
-    font-style: italic;
-  }
-
-  .btn-maps {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: var(--brown);
-    color: var(--white);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s;
-  }
-
-  .btn-maps:hover { background: var(--dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(107,74,62,0.3); }
+  .reviewer-stars { color: #D4A04A; font-size: 0.75rem; }
 
   /* CONTACT */
   .contact {
@@ -661,11 +484,28 @@
   .contact .section-title { color: var(--white); }
   .contact .section-title em { color: var(--pink-light); }
 
-  .contact-sub { color: rgba(255,250,246,0.7); font-weight: 300; line-height: 1.8; max-width: 500px; margin: 0 auto 3rem; }
+  .contact-sub {
+    color: rgba(255,250,246,0.7);
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto 3rem;
+  }
 
-  .contact-info { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
 
-  .contact-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
   .contact-item-icon {
     width: 48px; height: 48px;
@@ -677,10 +517,25 @@
     font-size: 1.2rem;
   }
 
-  .contact-item-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,250,246,0.5); }
-  .contact-item-value { font-size: 0.95rem; color: var(--white); font-weight: 400; }
+  .contact-item-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,250,246,0.5);
+  }
 
-  .contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .contact-item-value {
+    font-size: 0.95rem;
+    color: var(--white);
+    font-weight: 400;
+  }
+
+  .contact-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
   .btn-whatsapp {
     background: #25D366;
@@ -696,7 +551,11 @@
     transition: all 0.3s;
   }
 
-  .btn-whatsapp:hover { background: #1ebe5c; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
+  .btn-whatsapp:hover {
+    background: #1ebe5c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+  }
 
   .btn-light {
     background: rgba(255,255,255,0.15);
@@ -710,107 +569,103 @@
     transition: all 0.3s;
   }
 
-  .btn-light:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+  .btn-light:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+  }
 
   /* FOOTER */
-  footer { background: var(--dark); padding: 2.5rem 2rem; text-align: center; }
-
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream); margin-bottom: 0.5rem; }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1rem 0;
-    flex-wrap: wrap;
+  footer {
+    background: var(--dark);
+    padding: 2rem;
+    text-align: center;
   }
 
-  .footer-links a {
-    text-decoration: none;
-    color: rgba(245,237,228,0.5);
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-sub {
     font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
+    color: rgba(245,237,228,0.4);
+    letter-spacing: 0.1em;
   }
 
-  .footer-links a:hover { color: var(--cream); }
+  /* FLOATING WHATSAPP */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.5rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #25D366;
+    color: white;
+    padding: 0.8rem 1.4rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    animation: pulse 2s infinite;
+    transition: all 0.3s;
+  }
 
-  .footer-sub { font-size: 0.8rem; color: rgba(245,237,228,0.3); letter-spacing: 0.1em; }
+  .whatsapp-float:hover {
+    background: #1ebe5c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+    50% { box-shadow: 0 4px 35px rgba(37,211,102,0.8); }
+  }
+
+  .whatsapp-icon { font-size: 1.2rem; }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { height: 300px; }
+    .contact-info { gap: 2rem; }
     section { padding: 4rem 1.5rem; }
-
-    /* Hero */
-    .hero { padding: 7rem 1.5rem 4rem; }
-    .hero-title { font-size: 2.8rem; }
-    .hero-btns { flex-direction: column; align-items: center; }
-    .hero-btns a { width: 100%; text-align: center; justify-content: center; }
-
-    /* About */
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .about-visual { height: 220px; }
-    .about-card-main { width: 220px; height: 260px; }
-    .about-card-badge { width: 140px; height: 100px; }
-
-    /* Gallery */
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .gallery-item.tall { grid-row: span 1; min-height: 180px; }
-    .gallery-item { min-height: 150px; }
-
-    /* Services */
-    .services-header { flex-direction: column; }
-    .services-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .service-card { padding: 1.5rem 1rem; }
-
-    /* Pricing */
-    .pricing-grid { grid-template-columns: 1fr; }
-
-    /* Reviews */
-    .reviews-grid { grid-template-columns: 1fr; }
-
-    /* FAQ */
-    .faq-question h4 { font-size: 0.9rem; }
-
-    /* Social */
-    .social-buttons { flex-direction: column; align-items: center; }
-    .btn-instagram, .btn-facebook { width: 100%; max-width: 300px; justify-content: center; }
-
-    /* Contact */
-    .contact-info { gap: 1.5rem; flex-direction: column; align-items: center; }
-    .contact-btns { flex-direction: column; align-items: center; }
-    .btn-whatsapp, .btn-light { width: 100%; max-width: 300px; justify-content: center; }
-
-    /* Map */
-    .map-card { padding: 2rem 1.5rem; }
-
-    /* Footer */
-    .footer-links { gap: 1rem; }
-  }
-
-  @media (max-width: 480px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .hero-title { font-size: 2.2rem; }
-    .section-title { font-size: 1.8rem; }
+    .services-header { text-align: center; flex-direction: column; align-items: center; }
+    .services-header .section-sub { text-align: center; max-width: 100%; }
+    .gallery-placeholder { text-align: center !important; display: flex; justify-content: center; align-items: center; }
+    .whatsapp-float span.float-text { display: none; }
+    .whatsapp-float { padding: 0.9rem; border-radius: 50%; }
   }
 
   /* SCROLL ANIMATIONS */
-  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">La Bouclette</div>
+  <div class="nav-logo">
+    <img src="https://raw.githubusercontent.com/omarbenothm0/la-bouclette/main/2024-11-18.webp" alt="La Bouclette Logo" />
+  </div>
   <ul class="nav-links">
     <li><a href="#about">À propos</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Tarifs</a></li>
     <li><a href="#avis">Avis</a></li>
     <li><a href="#contact" class="nav-cta">Réserver</a></li>
   </ul>
@@ -822,8 +677,13 @@
   <div class="hero-blob blob2"></div>
   <div class="hero-content">
     <span class="hero-badge">✦ Spécialiste Cheveux Bouclés · Aouina, Tunis</span>
-    <h1 class="hero-title">Révélez vos<br><em>boucles naturelles</em></h1>
-    <p class="hero-sub">Un salon dédié aux cheveux bouclés, frisés et ondulés.<br>Soins personnalisés pour des boucles sublimées.</p>
+    <h1 class="hero-title">
+      Révélez vos<br><em>boucles naturelles</em>
+    </h1>
+    <p class="hero-sub">
+      Un salon dédié aux cheveux bouclés, frisés et ondulés.<br>
+      Soins personnalisés pour des boucles sublimées.
+    </p>
     <div class="hero-stars">
       <span class="stars">★★★★★</span>
       <span class="rating-text">4.9 · 19 avis Google</span>
@@ -849,7 +709,10 @@
       <div class="reveal">
         <span class="section-label">Notre histoire</span>
         <h2 class="section-title">Le studio qui <em>comprend</em> vos boucles</h2>
-        <p class="section-sub">La Bouclette Studio est spécialisé dans les cheveux bouclés, frisés et ondulés. Notre équipe maîtrise les techniques adaptées à chaque type de boucle pour des résultats magnifiques.</p>
+        <p class="section-sub">
+          La Bouclette Studio est spécialisé dans les cheveux bouclés, frisés et ondulés. 
+          Notre équipe maîtrise les techniques adaptées à chaque type de boucle pour des résultats magnifiques.
+        </p>
         <div class="about-features">
           <div class="feature">
             <div class="feature-icon">🌿</div>
@@ -875,44 +738,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery" id="galerie">
-  <div class="container">
-    <div class="gallery-header reveal">
-      <span class="section-label">Nos réalisations</span>
-      <h2 class="section-title">Des boucles <em>sublimées</em></h2>
-      <p class="section-sub" style="margin: 0 auto;">Chaque transformation est unique — découvrez nos résultats.</p>
-    </div>
-    <div class="gallery-grid" style="margin-top: 3rem;">
-      <div class="gallery-item tall reveal">
-        <span class="gallery-placeholder">📸</span>
-        <span class="gallery-placeholder-text">Photo avant/après</span>
-      </div>
-      <div class="gallery-item reveal">
-        <span class="gallery-placeholder">📸</span>
-        <span class="gallery-placeholder-text">Coupe à sec</span>
-      </div>
-      <div class="gallery-item reveal">
-        <span class="gallery-placeholder">📸</span>
-        <span class="gallery-placeholder-text">Soins naturels</span>
-      </div>
-      <div class="gallery-item reveal">
-        <span class="gallery-placeholder">📸</span>
-        <span class="gallery-placeholder-text">Coloration</span>
-      </div>
-      <div class="gallery-item reveal">
-        <span class="gallery-placeholder">📸</span>
-        <span class="gallery-placeholder-text">Tresses & Braids</span>
-      </div>
-      <div class="gallery-item reveal">
-        <span class="gallery-placeholder">📸</span>
-        <span class="gallery-placeholder-text">Coiffure mariage</span>
-      </div>
-    </div>
-    <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: var(--brown-light);">📸 Photos de réalisations à venir · Suivez-nous sur Instagram</p>
   </div>
 </section>
 
@@ -956,61 +781,6 @@
         <span class="service-icon">💄</span>
         <h3 class="service-name">Maquillage & Épilation</h3>
         <p class="service-desc">Services de maquillage professionnel et épilation à la cire pour une beauté complète.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="container">
-    <div class="pricing-header reveal">
-      <span class="section-label">Nos tarifs</span>
-      <h2 class="section-title">Des prix <em>transparents</em></h2>
-      <p class="section-sub" style="margin: 0 auto;">Des soins de qualité, accessibles à toutes.</p>
-    </div>
-    <div class="pricing-grid" style="margin-top: 3rem;">
-      <div class="pricing-card reveal">
-        <span class="pricing-badge">Coupes</span>
-        <h3 class="pricing-name">Cheveux Bouclés</h3>
-        <div class="pricing-price">À partir de 60 DT</div>
-        <div class="pricing-unit">selon longueur et épaisseur</div>
-        <hr class="pricing-divider">
-        <ul class="pricing-items">
-          <li><span>Coupe à sec courte</span><span>60 DT</span></li>
-          <li><span>Coupe à sec mi-longue</span><span>75 DT</span></li>
-          <li><span>Coupe à sec longue</span><span>90 DT</span></li>
-          <li><span>Styling & diffuseur</span><span>30 DT</span></li>
-        </ul>
-        <p class="pricing-note">* Tarifs indicatifs, devis sur RDV</p>
-      </div>
-      <div class="pricing-card featured reveal">
-        <span class="pricing-badge">⭐ Populaire</span>
-        <h3 class="pricing-name">Soins & Couleurs</h3>
-        <div class="pricing-price">À partir de 80 DT</div>
-        <div class="pricing-unit">soins personnalisés</div>
-        <hr class="pricing-divider">
-        <ul class="pricing-items">
-          <li><span>Soin ayurvédique</span><span>80 DT</span></li>
-          <li><span>Head Spa complet</span><span>120 DT</span></li>
-          <li><span>Coloration végétale</span><span>100 DT</span></li>
-          <li><span>Balayage / Ombré</span><span>150 DT</span></li>
-        </ul>
-        <p class="pricing-note">* Tarifs indicatifs, devis sur RDV</p>
-      </div>
-      <div class="pricing-card reveal">
-        <span class="pricing-badge">Spécial</span>
-        <h3 class="pricing-name">Tresses & Mariage</h3>
-        <div class="pricing-price">À partir de 100 DT</div>
-        <div class="pricing-unit">selon complexité</div>
-        <hr class="pricing-divider">
-        <ul class="pricing-items">
-          <li><span>Box Braids</span><span>100–200 DT</span></li>
-          <li><span>Tresses simples</span><span>60–100 DT</span></li>
-          <li><span>Coiffure mariage</span><span>sur devis</span></li>
-          <li><span>Maquillage</span><span>à partir de 80 DT</span></li>
-        </ul>
-        <p class="pricing-note">* Tarifs indicatifs, devis sur RDV</p>
       </div>
     </div>
   </div>
@@ -1073,116 +843,15 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="faq-header reveal">
-      <span class="section-label">Questions fréquentes</span>
-      <h2 class="section-title">Vos <em>questions</em></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item reveal">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Comment prendre rendez-vous ?</h4>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>La prise de rendez-vous se fait uniquement par WhatsApp au 25 017 771. Envoyez-nous un message et nous vous confirmons une date dans les plus brefs délais.</p>
-        </div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Combien de temps dure une séance ?</h4>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Cela dépend du service : une coupe à sec dure environ 1h à 1h30. Un soin ayurvédique complet peut prendre 2h. Pour les tresses et coiffures de mariage, comptez 2h à 4h selon la complexité.</p>
-        </div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Est-ce que vous travaillez sur tous les types de boucles ?</h4>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Oui ! Nous sommes spécialisées dans tous les types de cheveux bouclés, des ondulations douces (type 2) aux cheveux très frisés (type 4). Chaque cliente reçoit un diagnostic personnalisé.</p>
-        </div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Faut-il venir les cheveux lavés ?</h4>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Pour une coupe à sec, il vaut mieux venir les cheveux propres, secs et sans produit coiffant. Pour les soins, nous nous occupons du lavage sur place.</p>
-        </div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <h4>Où se trouve le salon exactement ?</h4>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Nous sommes situés au Red Castle, 16 Avenue de l'Environnement, 2e étage, Aouina, Tunis 2045. Vous pouvez nous contacter par WhatsApp pour obtenir un itinéraire précis.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL -->
-<section class="social-section" id="social">
-  <div class="container">
-    <div class="social-header reveal">
-      <span class="section-label">Restez connectées</span>
-      <h2 class="section-title">Suivez-nous sur <em>les réseaux</em></h2>
-      <p class="section-sub" style="margin: 0.8rem auto 0;">Des inspirations, des conseils et nos dernières réalisations — tous les jours.</p>
-    </div>
-    <div class="social-buttons" style="margin-top: 2.5rem;">
-      <a href="https://instagram.com/labouclette" target="_blank" class="btn-instagram">
-        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-        Instagram
-      </a>
-      <a href="https://facebook.com/labouclette" target="_blank" class="btn-facebook">
-        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-        Facebook
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- MAP -->
-<section class="map-section" id="map">
-  <div class="container">
-    <div class="map-header reveal">
-      <span class="section-label">Nous trouver</span>
-      <h2 class="section-title">Venez nous <em>rendre visite</em></h2>
-      <p class="section-sub" style="margin: 0 auto;">Red Castle, 16 Ave de l'Environnement, 2e étage — Aouina, Tunis 2045</p>
-    </div>
-    <div class="map-card reveal" style="margin-top: 3rem;">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">📍</div>
-      <p class="map-address">
-        <strong>Red Castle</strong>, 16 Avenue de l'Environnement, 2e étage<br>
-        Aouina, Tunis 2045
-      </p>
-      <p class="map-hint">À côté du restaurant WokTime</p>
-      <a href="https://www.google.com/maps/dir//La+Bouclette+studio,+Red+Castle,+16,+Avenue+de+l%E2%80%99Environnement+2e+etage+,Aouina,+Tunis+(%C3%A0+c%C3%B4t%C3%A9+du+restaurant+WokTime+et+au-dessus+du+restaurant,+Tunis+2045/@36.8645941,10.2487974,2787m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x12e2cb78ddda9161:0x5d7a158832d2350e!2m2!1d10.2610971!2d36.8603766?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-maps">
-        📍 Ouvrir dans Google Maps
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
-    <span class="section-label">Contact</span>
-    <h2 class="section-title" style="margin: 0 auto 1rem;">Prenez <em>rendez-vous</em></h2>
-    <p class="contact-sub">Ouvert du lundi au samedi · Ferme à 19h00<br>Prise de rendez-vous rapide par WhatsApp</p>
+    <span class="section-label">Nous trouver</span>
+    <h2 class="section-title" style="margin: 0 auto 1rem;">Venez nous <em>rendre visite</em></h2>
+    <p class="contact-sub">
+      Ouvert du lundi au samedi · Ferme à 19h00<br>
+      Prise de rendez-vous rapide par WhatsApp
+    </p>
     <div class="contact-info">
       <div class="contact-item">
         <div class="contact-item-icon">📍</div>
@@ -1198,7 +867,7 @@
       <div class="contact-item">
         <div class="contact-item-icon">⏰</div>
         <span class="contact-item-label">Horaires</span>
-        <span class="contact-item-value">Lun – Sam · Ferme à 19:00</span>
+        <span class="contact-item-value">Ouvert · Ferme à 19:00</span>
       </div>
     </div>
     <div class="contact-btns">
@@ -1211,16 +880,14 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">La Bouclette Studio</div>
-  <div class="footer-links">
-    <a href="#about">À propos</a>
-    <a href="#services">Services</a>
-    <a href="#pricing">Tarifs</a>
-    <a href="#avis">Avis</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://wa.me/21625017771">WhatsApp</a>
-  </div>
-  <p class="footer-sub">Spécialiste cheveux bouclés · Aouina, Tunis · ★ 4.9 Google</p>
+  <p class="footer-sub">Spécialiste cheveux bouclés · Aouina, Tunis · ★ 4.9</p>
 </footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/21625017771" class="whatsapp-float" target="_blank">
+  <span class="whatsapp-icon">💬</span>
+  <span class="float-text">Prendre RDV</span>
+</a>
 
 <script>
 const reveals = document.querySelectorAll('.reveal');
@@ -1232,13 +899,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
-
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
 </script>
 
 </body>
